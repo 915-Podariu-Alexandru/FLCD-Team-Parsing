@@ -1,6 +1,6 @@
 Documentation for Parser Part 2
 
-https://github.com/915-Podariu-Alexandru/FLCD-Team-Parsing/Part2
+https://github.com/915-Podariu-Alexandru/FLCD-Team-Parsing/tree/main/Part%202
 
 First Function
 -> Has 2 components
