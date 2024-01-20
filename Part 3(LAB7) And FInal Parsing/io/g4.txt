@@ -1,0 +1,7 @@
+S@A@B@C
+a@b@d@h@g
+S
+S->A C B|C b b|B a
+A->d a|B C
+B->g
+C->EPS

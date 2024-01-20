@@ -1,0 +1,34 @@
+Documentation Lab 7 and Final Lab Parsing
+
+
+
+The program Uses Three Main Classes
+
+Grammar Class, which Includes The Grammar Processing, First and Follow Functions, And the Parser Table Builder.
+	- Data Structure For the grammar:
+	private final String ELEMENT_SEPARATOR = "@";
+    	private final String SEPARATOR_OR_TRANSITION = "\\|";
+    	private final String TRANSITION_CONCATENATION = " ";
+    	private final String EPSILON = "EPS";
+    	private final String SEPARATOR_LEFT_RIGHT_HAND_SIDE = "->";
+
+	- Data Structure for the LL(1) Parser 
+	private Map<String, Set<String>> firstSets;
+        private Set<String> nonTerminals;
+        private Set<String> terminals;
+        private Map<List<String>, Set<List<String>>> productions;
+        private String startingSymbol;
+        private boolean isCFG;
+
+        private boolean NoConflict = true;
+        private Stack<String> ParsingStack;
+        private ArrayList<String> sequence;
+
+ParseTreeNode - which creates a Tree Node 
+	- Data Structure:
+	private String value;
+    	private List<ParseTreeNode> children; 
+
+ParserOutput - which Handles the Output for a Given Tree
+	- Data Structure:
+	private ParseTreeNode treeRoot;

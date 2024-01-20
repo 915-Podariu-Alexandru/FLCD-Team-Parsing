@@ -1,0 +1,21 @@
+program@stmt@stmtlist@cmpdstmt@expression@term@factor@iostmt@type@arraydeclaration@assignstmt@ifstmt@duringstmt@loopstmt@loopcond@condition@relation@declaration@
+$@,@:@.@+@-@*@/@mod@or@and@<@<=@>@>=@!=@=@(@)@[@]@{@}@read@print@IDENTIFIER@CONST@if@else@during@loop@integer@string@char@bool@array@
+program
+program->$ cmpdstmt $
+stmt->declaration|assignstmt|ifstmt|duringstmt|loopstmt|iostmt
+stmtlist->stmt|stmt . stmtlist
+cmpdstmt->( stmtlist )
+expression->term|expression + term|expression - term
+term->term * factor|term / factor|term mod factor|factor
+factor->[ expression ]|IDENTIFIER|CONST
+iostmt->read [ IDENTIFIER ]|print [ IDENTIFIER ]|print [ CONST ]
+type->integer|string|char|bool
+declaration->type IDENTIFIER|arraydeclaration
+arraydeclaration->type array[ integer ]
+assignstmt->IDENTIFIER := expression
+ifstmt->if [ condition ] : cmpdstmt|if [ condition ] : cmpdstmt else : cmpdstmt
+duringstmt->during [ condition] : cmpdstmt
+loopstmt->loop loopcond : cmpdstmt
+loopcond->[ assignstmt , condition , assignstmt ]
+condition->expression relation expression
+relation-><|>|<=|>=|=|!=|or|and
